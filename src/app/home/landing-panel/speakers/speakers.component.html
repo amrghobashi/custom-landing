@@ -1,0 +1,19 @@
+<div class="speaker">
+    <h2 class="desc-header">OUR SPEAKERS</h2>
+    <div class="card-container">
+
+        <p-card *ngFor="let speaker of speakers" class="speaker-card">
+            <ng-template pTemplate="header">
+                <div class="speaker-image">
+                    <img [src]="speaker.imageUrl" alt="Speaker Image">
+                </div>
+            </ng-template>
+            <ng-template class="speaker-info" pTemplate="content">
+                <h2 class="speaker-name">{{ speaker.name }}</h2>
+                <p class="speaker-company">{{ speaker.title }}</p>
+                <p class="speaker-company">{{ speaker.company }}</p>
+                <p class="speaker-topic">{{ speaker.topic }}</p>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

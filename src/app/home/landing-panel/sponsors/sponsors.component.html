@@ -1,0 +1,40 @@
+<section class="sponsors-section">
+    <h2 class="sponsors-header">OUR SPONSORS</h2>
+    <p class="sponsors-desc">Sponsors short description.</p>
+    <div class="sponsors-container">
+        <!-- <div class="marquee" > -->
+            <marquee behavior="loop" direction="left" scrolldelay="100" style="font-size: large;">
+                <!-- Loop through sponsors array and display each as a card -->
+                <div class="sponsors-wrapper">
+                    <p-card *ngFor="let sponsor of sponsors" class="sponsor-card">
+                        <img [src]="sponsor.image" alt="Sponsor Logo" class="sponsor-image" />
+                    </p-card>
+                </div>
+            </marquee>
+            
+        <!-- </div> -->
+    </div>
+</section>
+
+<!-- <section class="sponsors-section">
+    <h2 class="sponsors-header">Our Sponsors</h2>
+    <h2 class="sponsors-desc">Sponsors short description.</h2>
+    <div class="marquee-container">
+        <div class="marquee" #marquee>
+            <div class="sponsors-wrapper" *ngIf="sponsors.length > 0">
+                <p-card *ngFor="let sponsor of sponsors">
+                    <img [src]="sponsor.image" alt="Sponsor Logo" class="sponsor-image" />
+                </p-card>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<!-- <div class="marquee-container">
+    <div class="marquee" *ngFor="let sponsor of sponsors">
+        <img [src]="sponsor.image" alt="Sponsor 1" />
+    </div>
+</div> -->

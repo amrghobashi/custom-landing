@@ -1,1 +1,929 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.header-section {
+    background-image: url(assets/img/event1.jpg);
+    /* Add your background image */
+    background-size: cover;
+    /* Cover the entire section */
+    background-position: center;
+    /* Center the image */
+    height: 100vh;
+    /* Full height of the viewport */
+    display: flex;
+    /* Flexbox to center content */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
+    text-align: center;
+    /* Center text inside the content */
+    padding: 20px;
+    /* Optional padding for inner spacing */
+    box-sizing: border-box;
+    /* Include padding/border in element's dimensions */
+    overflow: hidden;
+    /* Prevent overflow */
+}
+
+.header-content {
+    max-width: 800px;
+    /* Limit the width of the content */
+    width: 100%;
+    /* Full width up to the max-width */
+    color: white;
+    /* Text color */
+}
+
+// .event-title {
+//     font-size: 2.5rem; /* Adjust title size */
+//     margin-bottom: 10px; /* Space below the title */
+// }
+
+.event-title {
+    font-size: 6em;
+    font-weight: 700;
+    margin: 0;
+    color: #FFFFFF;
+    background: -moz-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: -ms-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: -o-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.event-date {
+    font-size: 1.5rem;
+    /* Adjust date size */
+    margin-bottom: 20px;
+    /* Space below the date */
+}
+
+.call-to-action button {
+    font-size: 1rem;
+    /* Button text size */
+    padding: 10px 20px;
+    /* Button padding */
+    background-color: #ff7b15;
+    /* Button background color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    color: white;
+    /* Button text color */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.layout-topbar {
+    position: fixed;
+    height: 5rem;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: transparent;
+    /* Initially transparent */
+    transition: background-color 1s ease, left 2s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+    /* No shadow initially */
+}
+
+.layout-topbar.scrolled {
+    background-color: #f7f7f7;
+    /* Change to your desired color after scrolling */
+    box-shadow: 0 3px 5px rgb(116 116 116 / 31%), 0 0 2px rgba(0, 0, 0, 0.0509803922),
+        0 1px 4px rgba(0, 0, 0, 0.0784313725);
+
+    /* Add shadow after scrolling */
+    .title {
+        color: #66615b;
+        /* Change title color after scrolling */
+    }
+
+    .menu-items {
+        color: #66615b;
+        /* Change menu-items color after scrolling */
+    }
+}
+
+.spacer {
+    flex: auto;
+}
+
+.title {
+    font-size: 30px;
+    margin: 0;
+    color: white;
+    font-family: cursive;
+}
+
+.menu-items {
+    color: white;
+    font-family: cursive;
+    display: block;
+    margin-right: 4rem;
+    cursor: pointer;
+}
+
+// .fog-low{
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     margin-left: -35%;
+//     margin-bottom: -50px;
+//     width: 110%;
+//     opacity: .85;
+//     background-image: url(assets/img/fog-low.png);
+
+//     img{
+//         width: 100%;
+//     }
+
+//     &.right{
+//         margin-left: 30%;
+//         opacity: 1;
+//     }
+// }
+
+.fog-low {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: -30%;
+    margin-bottom: -50px;
+    width: 110%;
+    opacity: 0.85;
+}
+
+.fog-low.right {
+    margin-left: 20%;
+    opacity: 1;
+}
+
+.moving-clouds {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 43.75em;
+    -webkit-animation: cloudLoop 80s linear infinite;
+    animation: cloudLoop 80s linear infinite;
+    // background-image: url(assets/img/clouds.png);
+    // overflow: hidden;
+}
+
+@keyframes cloudLoop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+
+    100% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0)
+    }
+}
+
+@keyframes cloudLoop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+
+    100% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0)
+    }
+}
+
+.header-section .filter::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.title-brand {
+    max-width: 730px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    display: block;
+
+    .type {
+        position: absolute;
+        font-size: 20px;
+        background: #132026;
+        padding: 6px 10px;
+        border-radius: 4px;
+        top: 0;
+        font-weight: 600;
+        margin-top: 10px;
+        right: -15px;
+    }
+}
+
+.ie-background {
+    .header-section {
+        .content-center {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            -ms-transform: translate(-50%, -75%);
+
+            .title-brand {
+                .event-title {
+                    background: none;
+                }
+            }
+        }
+    }
+}
+
+.event-title {
+    font-size: 6em !important;
+    font-weight: 700 !important;
+    margin: 0;
+    color: #FFFFFF;
+    // z-index: 1;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    letter-spacing: 0.3rem !important;
+    // background: #fbf8ec;
+    background: -moz-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: -webkit-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: -ms-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: -o-linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    background: linear-gradient(to bottom, #FFFFFF 35%, #4e6773 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    // margin-top: 11%;
+    position: relative;
+    z-index: 3;
+}
+
+.email-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 275px;
+    max-width: 70%;
+    outline: none; // Remove the default outline
+
+    &:focus {
+        border: none; // Ensure no border on focus
+        outline: none; // Remove any outline when focused
+    }
+}
+
+.register-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #121212;
+    color: #c1c3c5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; // Smooth transition for color change
+
+    &:hover {
+        background-color: #c69d5b;
+        color: black;
+    }
+
+    &:active {
+        background-color: #ac8039; // Color when clicked
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sticky-bottom {
+        flex-direction: column;
+    }
+
+    .email-input {
+        margin-bottom: 10px;
+        margin-right: 0 !important;
+        width: 70% !important;
+
+    }
+
+    .register-btn {
+        width: 70%;
+    }
+}
+
+.sticky-bottom {
+    position: absolute;
+    /* Changed from sticky to absolute */
+    bottom: 0;
+    left: 0;
+    /* Align to the left */
+    width: 100%;
+    /* Full width of the header section */
+    color: rgba(255, 255, 255, 0.76);
+    background-color: rgba(186, 186, 186, 0.2392156863);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* Ensure it stays above other content */
+}
+
+.stay-up-to-date {
+    margin: 7px !important;
+    /* Space between the paragraph and the input field */
+    font-size: 1rem;
+    white-space: nowrap;
+    /* Prevent the text from wrapping */
+}
+
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(198, 157, 91, 1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    width: 100%;
+    min-height: 306px;
+    /* Set a minimum height */
+    height: auto;
+    /* Allow height to adjust based on content */
+    position: relative;
+    // padding-top: 20px; /* Optional: adjust if needed to push content up */
+    color: #1f2128;
+    font-family: cursive;
+    padding: 5%;
+}
+
+.desc-header {
+    margin: 0;
+    text-align: center;
+    font-family: cursive;
+    font-weight: 600;
+    font-size: 1.525em; // Adjust the value based on your design
+
+    // Optional: Set a minimum and maximum font size for better control
+    @media (max-width: 768px) {
+        font-size: min(1.5em); // Min font size of 1.5em and responsive scaling
+    }
+
+    @media (max-width: 500px) {
+        font-size: min(1.2em); // Min font size of 1.2em and responsive scaling
+    }
+}
+
+
+.desc-paragraph {
+    text-align: center;
+    margin: 0;
+    max-width: 80%;
+    /* Optional: to control paragraph width */
+    padding-top: 10px;
+    /* Adjust this padding if you need more control */
+    font-family: cursive;
+}
+
+.agenda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #282A3A;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    width: 100%;
+    height: fit-content;
+    // height: 306px;
+    position: relative;
+    // padding-top: 20px; /* Optional: adjust if needed to push content up */
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.agenda-header {
+    margin: 0;
+    text-align: center;
+    font-family: cursive;
+    font-weight: 600;
+    color: wheat;
+    padding-bottom: 4%;
+    font-size: 1.525em; // Adjust the value based on your design
+
+    // Optional: Set a minimum and maximum font size for better control
+    @media (max-width: 768px) {
+        font-size: min(1.5em); // Min font size of 1.5em and responsive scaling
+    }
+
+    @media (max-width: 500px) {
+        font-size: min(1.2em); // Min font size of 1.2em and responsive scaling
+    }
+}
+
+.agenda-paragraph {
+    text-align: center;
+    margin: 0;
+    max-width: 80%;
+    /* Optional: to control paragraph width */
+    padding-top: 10px;
+    /* Adjust this padding if you need more control */
+    font-family: cursive;
+    color: antiquewhite;
+}
+
+.p-timeline-left .p-timeline-event-opposite {
+    text-align: right;
+    color: wheat;
+}
+
+.p-timeline .p-timeline-event-marker {
+    border: 3px solid #c69d5b;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: #282a3a;
+}
+
+.p-timeline.p-timeline-vertical .p-timeline-event-connector {
+    width: 3px;
+    background-color: #c69d5b;
+}
+
+.speaker {
+    justify-content: center;
+    align-items: center;
+    background: rgba(233, 224, 208, 1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    width: 100%;
+    min-height: 306px;
+    /* Set a minimum height */
+    height: auto;
+    /* Allow height to adjust based on content */
+    position: relative;
+    // padding-top: 20px; /* Optional: adjust if needed to push content up */
+    color: #1f2128;
+    font-family: cursive;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; // Adjust gap as needed
+
+    text-align: center;
+    // margin-bottom: 2rem;
+}
+
+.section-header {
+    font-size: 2rem; // Adjust the font size as needed
+    font-weight: 700; // Adjust font weight
+    color: #333; // Adjust text color as needed
+    margin-bottom: 1rem; // Space between header and cards
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; // Adjust gap as needed
+}
+
+.speaker-card {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // text-align: center;
+    // padding: 1em;
+    // border: none; // Remove default card border if needed
+    flex: 1 1 calc(25% - 1rem); // 4 cards per row with gap
+    box-shadow: none; // Remove box-shadow if needed
+    border-radius: 10px; // Optional: add border-radius for rounded corners
+    height: 370px;
+    max-width: 13em;
+    min-width: 10em;
+    // max-height: 400px;
+
+    .p-card-header {
+        border-bottom: none; // Remove card header border if needed
+    }
+
+    .speaker-image {
+        // width: 100px; // Adjust size as needed
+        // height: 100px; // Adjust size as needed
+        // border-radius: 50%; // Circular image
+        overflow: hidden;
+        // margin: auto;
+        border-radius: 50%; // Make image circular
+        width: 100px; // Adjust size as needed
+        height: 100px; // Adjust size as needed
+        object-fit: cover; // Ensure the image covers the container
+        margin: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .speaker-name {
+        font-size: 1.2em;
+        color: #666; // Adjust color as needed
+        margin: 0.5em 0;
+        text-align: center;
+    }
+
+    .speaker-company,
+    .speaker-topic {
+        font-size: 1em;
+        text-align: center;
+        color: #666; // Adjust color as needed
+        padding-right: 10%;
+        padding-left: 10%;
+        font-weight: bold;
+    }
+
+    .p-card {
+        box-shadow: none !important;
+        background-color: transparent;
+    }
+
+    .p-card .p-card-body {
+        padding: 0px;
+    }
+
+    @media (max-width: 1200px) {
+        .speaker-card {
+            flex: 1 1 calc(50% - 1rem); // 2 cards per row for medium screens
+        }
+
+        .speaker-topic {
+            padding-right: 4% !important;
+            padding-left: 4% !important;
+        }
+
+        .speaker {
+            gap: 1.2rem; // Adjust gap as needed
+
+        }
+    }
+
+    @media (max-width: 768px) {
+        .speaker-card {
+            flex: 1 1 100%; // 1 card per row for small screens
+        }
+
+        .speaker-topic {
+            padding-right: 0% !important;
+            padding-left: 0% !important;
+        }
+    }
+}
+
+
+.sponsors-section {
+    padding: 20px;
+    background-color: #c69d5b;
+    text-align: center;
+
+    .sponsors-header {
+        font-size: 1.525em;
+        margin-bottom: 20px;
+        font-family: cursive;
+        @media (max-width: 768px) {
+            font-size: min(1.5em); // Min font size of 1.5em and responsive scaling
+        }
+    
+        @media (max-width: 500px) {
+            font-size: min(1.2em); // Min font size of 1.2em and responsive scaling
+        }
+    }
+
+    .sponsors-desc {
+        color: #3e3e3e; // Adjust color as needed
+        margin: 0.5em 0;
+        text-align: center;        
+        margin-bottom: 20px;
+        font-size: 1em;
+        font-family: cursive;
+    }
+
+    .sponsors-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        /* Space between sponsor logos */
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .p-card {
+        border: none;
+        box-shadow: none !important;
+        background-color: transparent;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 100%;
+        place-content: center;
+    }
+
+    .sponsor-image {
+        width: 100px;
+        height: auto;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 1024px) {
+        .sponsors-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .sponsor-image {
+            width: 80px;
+            /* Adjust size for smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .sponsors-container {
+            flex-direction: column;
+        }
+
+        .p-card .p-card-body {
+            padding: 0rem !important;
+        }
+
+        .sponsor-image {
+            width: 60px;
+            /* Further adjust size for very small screens */
+        }
+    }
+}
+
+// .marquee-container {
+//     width: 100%; /* Full width */
+//     overflow: hidden; /* Hide overflow to only show the scrolling content */
+//     background-color: #f0f0f0; /* Optional: Background color */
+//     padding: 20px 0; /* Optional: Padding for better visual appearance */
+// }
+
+// .marquee {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     animation: marquee 10s linear infinite; /* Animation duration and type */
+//     /* Optional: make it double the width to allow smooth scrolling */
+//     width: 200%;
+// }
+
+// .marquee img {
+//     max-height: 100px; /* Adjust as needed */
+//     margin: 0 20px; /* Space between images */
+// }
+
+// /* Keyframes for marquee animation */
+// @keyframes marquee {
+//     0% {
+//         transform: translateX(0);
+//     }
+//     100% {
+//         transform: translateX(-50%);
+//     }
+// }
+
+.sponsors-wrapper {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.sponsor-card {
+    display: inline-block;
+    margin-right: 20px; /* Space between sponsor cards */
+    text-align: center; /* Center the content inside each card */
+}
+
+.sponsor-image {
+    width: 100px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the images circular */
+}
+
+.location-section {
+    position: relative;
+    background-image: url('assets/img/map3.jpg'); /* Replace with the path to your map image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.location-overlay {
+    background: rgba(0, 0, 0, 0.67); /* Adjust the overlay color and opacity as needed */
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.location-header {
+    font-size: 1.525em;
+    // margin-bottom: 10px;
+    font-weight: bold;
+    width: 100%; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    color: #e8e8e8;
+    font-family: cursive;
+
+    @media (max-width: 768px) {
+        font-size: min(1.4em); // Min font size of 1.5em and responsive scaling
+    }
+
+    @media (max-width: 500px) {
+        font-size: min(1.2em); // Min font size of 1.2em and responsive scaling
+    }
+}
+
+.location-container {
+    height: 100%;
+    place-items: center;
+    display: flex;
+}
+
+.location-description {
+    font-size: 1em;
+    margin: 0;
+    color: #e8e8e8;
+    font-family: cursive;
+}
+
+.footer-section {
+    position: relative;
+    height: auto; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-container {
+    height: 100%;
+    place-items: center;
+    display: flex;
+    width: 100%;
+    background-color: black;
+}
+
+.footer-description {
+    font-size: 1em;
+    margin: 0;
+    color: #e8e8e8;
+    font-family: cursive;
+}
+
+.footer-action {
+    position: relative;
+    /* Changed from sticky to absolute */
+    bottom: 0;
+    left: 0;
+    /* Align to the left */
+    width: 100%;
+    /* Full width of the header section */
+    color: rgba(255, 255, 255, 0.76);
+    background-color: rgba(0, 0, 0, 0.458);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .register-btn {
+        background-color: #ac8039;
+        color: black;
+        &:hover {
+            background-color: #c69d5b;
+            color: black;
+        }
+    
+        &:active {
+            background-color: #ac8039; // Color when clicked
+        }
+    }
+    @media (max-width: 900px) {
+            flex-direction: column;
+
+        .email-input {
+            margin-bottom: 10px;
+            margin-right: 0 !important;
+            width: 70% !important;
+    
+        }
+    
+        .register-btn {
+            width: 70%;
+        }
+    }
+}
+
+.footer-social {
+    display: flex;
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .event-title {
+        font-size: 4rem !important;
+        /* Smaller title on small screens */
+    }
+
+    .event-date {
+        font-size: 1.2rem !important;
+        /* Smaller date on small screens */
+    }
+
+    .call-to-action button {
+        font-size: 0.9rem;
+        /* Smaller button text on small screens */
+        padding: 8px 16px;
+        /* Smaller button padding */
+    }
+
+    .menu-items {
+        margin-right: 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .event-title {
+        font-size: 3em !important;
+    }
+
+    .event-date {
+        font-size: 0.9rem !important;
+        /* Smaller date on small screens */
+    }
+
+    .menu-items {
+        margin-right: 2rem;
+    }
+}

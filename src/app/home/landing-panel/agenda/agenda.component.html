@@ -1,0 +1,12 @@
+<div class="agenda">
+    <h3 class="agenda-header">AGENDA</h3>
+
+    <p-timeline [value]="events">
+        <ng-template pTemplate="content" let-event>
+            <small class="p-text-secondary" style="color: wheat;">{{ event.date }}</small>
+        </ng-template>
+        <ng-template pTemplate="opposite" style="color: wheat;" let-event>
+            {{ event.status }}
+        </ng-template>
+    </p-timeline>
+</div>

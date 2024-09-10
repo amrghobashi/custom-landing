@@ -1,5 +1,7 @@
 <div class="sticky-bottom">
     <p class="stay-up-to-date">STAY UP TO DATE</p>
-    <input type="text" class="email-input">
-    <button class="register-btn">Register</button>
+    <input type="text" class="email-input" [(ngModel)]="value" required>
+    <button class="register-btn" (click)="submitMail()">Register</button>
 </div>
+
+<p-toast position="bottom-right" key="t1"></p-toast>

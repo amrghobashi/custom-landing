@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class EventDateComponent {
 
+  dateTime = "DATE TIME";
+  location = "LOCATION";
 }

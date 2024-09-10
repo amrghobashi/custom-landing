@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
+import { SponsorsService } from './sponsors.service';
+import { Sponsor } from '../../../models/model';
 
 @Component({
   selector: 'app-sponsors',
@@ -10,10 +12,18 @@ import { CardModule } from 'primeng/card';
   styleUrl: './sponsors.component.scss'
 })
 export class SponsorsComponent {
-  sponsors = [
-    { image: 'assets/img/logo.jpg' },
-    { image: 'assets/img/logo1.png' },
-    { image: 'assets/img/logo2.png' },
-    // Add more sponsors as needed
-  ];
+
+  sponsors!: Sponsor[];
+
+  constructor(private sponsorsService: SponsorsService) {}
+
+  ngOnInit() {
+    this.getSpeakers();
+  }
+
+  getSpeakers() {
+    this.sponsorsService.getSponsorsData().then(data => {
+      this.sponsors = data
+    })
+  }
 }

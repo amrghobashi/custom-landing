@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TimelineModule } from 'primeng/timeline';
+import { Subscription } from 'rxjs';
+import { AgendaService } from './agenda.service';
 
 interface EventItem {
   status?: string;
@@ -17,14 +19,17 @@ interface EventItem {
   styleUrl: './agenda.component.scss'
 })
 export class AgendaComponent {
-  events: EventItem[];
+  events!: EventItem[];
 
-  constructor() {
-      this.events = [
-          { status: 'Meet & Greet, Nametags, Swag, Refreshments', date: '15/10/2020 10:30', color: 'wheat', image: 'game-controller.jpg' },
-          { status: 'Meet & Greet, Nametags, Swag, Refreshments', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: 'wheat' },
-          { status: 'Meet & Greet, Nametags, Swag, Refreshments', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: 'wheat' },
-          { status: 'Meet & Greet, Nametags, Swag, Refreshments', date: '16/10/2020 10:00', icon: 'pi pi-check', color: 'wheat' }
-      ];
+  constructor(private agendaService: AgendaService) {}
+
+  ngOnInit() {
+    this.getAgenda();
+  }
+
+  getAgenda() {
+    this.agendaService.getAgendaData().then(data => {
+      this.events = data
+    })
   }
 }

@@ -2,22 +2,34 @@
     <p class="title">Company Name
     </p>
     <span class="spacer"></span>
-    <div style="display: flex;">
-
+    <div class="large-screen" style="display: flex;">
         <p>
             <a class="menu-items">
                 <span class="pi pi-facebook"></span>
-        </a>
-    </p>
-    <p>
-        <a class="menu-items">
-            <span class="pi pi-instagram"></span>
-        </a>
-    </p>
-    <p>
-        <a class="menu-items">
-            <span class="pi pi-twitter"></span>
-        </a>
-    </p>
-</div>
+            </a>
+        </p>
+        <p>
+            <a class="menu-items">
+                <span class="pi pi-instagram"></span>
+            </a>
+        </p>
+        <p>
+            <a class="menu-items">
+                <span class="pi pi-twitter"></span>
+            </a>
+        </p>
+    </div>
+    <div class="small-screen">
+        <p-button [rounded]="true" [text]="true" class="menu-toggle-btn" (click)="toggleMenu()"
+            icon="pi pi-link" class="small-link"/>
+            <div class="social-media-menu" *ngIf="isMenuVisible">
+                <div *ngFor="let item of items">
+
+                    <p><a class="social-items"><span class={{item.icon}}></span></a></p>
+                </div>
+            </div>
+        <!-- <p>
+            <p-menu #menu [model]="items" [popup]="true" />
+        </p> -->
+    </div>
 </div>

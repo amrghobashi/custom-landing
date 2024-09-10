@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './location.component.scss'
 })
 export class LocationComponent {
-
+  desc = "The specific venue and city, or virtual platform, where the event will take place.";
 }

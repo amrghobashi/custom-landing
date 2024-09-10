@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './head-line.component.scss'
 })
 export class HeadLineComponent {
-
+  title = "Event Title";
 }
